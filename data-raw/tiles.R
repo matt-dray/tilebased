@@ -19,6 +19,14 @@ player <- system.file(
   ) |>
   .tile_to_nr()
 
+enemy <- system.file(
+  "extdata",
+  "kenney_tiny-dungeon_tile_0123.png",
+  package = "tilebased"
+) |>
+  .tile_to_nr()
+
 usethis::use_data(grass, overwrite = TRUE)
 usethis::use_data(tree, overwrite = TRUE)
 usethis::use_data(player, overwrite = TRUE)
+usethis::use_data(enemy, overwrite = TRUE)
