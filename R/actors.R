@@ -11,29 +11,11 @@
   room[player_loc] <- "."
 
   if (kp %in% c("Up", "Down", "Left", "Right")) {
-
-    if (kp == "Up") {
-      move_to <- player_loc - 1
-      if (player_loc == wrap_tiles["up"]) move_to <- wrap_tiles["down"]
-    }
-
-    if (kp == "Down") {
-      move_to <- player_loc + 1
-      if (player_loc == wrap_tiles["down"]) move_to <- wrap_tiles["up"]
-    }
-
-    if (kp == "Right") {
-      move_to <- player_loc + room_y_max
-      if (player_loc == wrap_tiles["right"]) move_to <- wrap_tiles["left"]
-    }
-
-    if (kp == "Left") {
-      move_to <- player_loc - room_y_max
-      if (player_loc == wrap_tiles["left"]) move_to <- wrap_tiles["right"]
-    }
-
-    player_loc <- move_to
-
+    if (kp == "Up") move_to <- player_loc - 1
+    if (kp == "Down") move_to <- player_loc + 1
+    if (kp == "Right") move_to <- player_loc + room_y_max
+    if (kp == "Left") move_to <- player_loc - room_y_max
+    if (room[move_to] != "#") player_loc <- move_to
   }
 
   room[player_loc] <- "@"

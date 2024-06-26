@@ -12,3 +12,8 @@
 #' @format nativeRaster.
 #' @source <https://www.kenney.nl/>
 "player"
+
+#' Enemy Sprite
+#' @format nativeRaster.
+#' @source <https://www.kenney.nl/>
+"enemy"

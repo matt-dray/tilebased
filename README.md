@@ -11,4 +11,4 @@ A concept, just for fun. Not possible without Mike Cheng's [{nara}](https://cool
 
 Install with `remotes::install_github("matt-dray/tilebased")` and then `tilebased::play()`. Michaelsoft Binbows not supported.
 
-<img src='man/figures/demo.gif' width='33%' alt='aria-label="A pixel-sprite human character moves across grassy tiles. The sprite wraps around the screen to appear on the other side if it goes off the edge. This is happening in an R Graphics Device."'>
+<img src='man/figures/demo.gif' width='33%' alt='aria-label="A pixel-sprite human character moves across grassy tiles. There are impenetrable tree sprites around the edge with collision detection. This is happening in an R Graphics Device."'>
