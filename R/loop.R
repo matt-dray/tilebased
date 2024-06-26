@@ -4,19 +4,18 @@
 #' @return Nothing. Draws to screen.
 #' @export
 #' @examples \dontrun{play()}
-play <- function(height = 5L, width = height) {
+play <- function(height = 8L, width = 10L) {
+
+  room <<- .setup_room(height, width)
 
   tiles <<- list(
     grass = tilebased::grass,
     tree = tilebased::tree,
-    player = tilebased::player
+    player = tilebased::player,
+    enemy = tilebased::enemy
   )
 
-  tile_n <- height * width
-  room <<- matrix(rep(".", tile_n), nrow = height, ncol = width)
-  room[sample(seq(tile_n), 1)] <<- "@"  # place player
-
-  eventloop::run_loop(explore_room)
+  eventloop::run_loop(.explore_room)
 
 }
 
@@ -25,17 +24,16 @@ play <- function(height = 5L, width = height) {
 #' @param ... Not used. For compatibility.
 #' @return Nothing. Draws to screen.
 #' @noRd
-explore_room <- function(event, ...) {
+.explore_room <- function(event, ...) {
 
-  .print_room(room, tiles)
+  .draw_room(room, tiles)
 
   if (!is.null(event)) {
     if (event$type == 'key_press') {
       kp <- event$str
       room <<- .move_player(room, kp)
-      .print_room(room, tiles)
+      .draw_room(room, tiles)
     }
   }
-
 
 }
