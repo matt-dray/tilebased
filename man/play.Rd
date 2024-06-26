@@ -4,7 +4,7 @@
 \alias{play}
 \title{Begin a Game}
 \usage{
-play(height = 5L, width = height)
+play(height = 8L, width = 10L)
 }
 \arguments{
 \item{height}{Integer. Number of tiles high for the map.}
