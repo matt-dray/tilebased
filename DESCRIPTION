@@ -1,6 +1,6 @@
 Package: tilebased
 Title: Traverse a Tile-Based Map in an R Graphics Window
-Version: 0.1.0
+Version: 0.2.0
 Authors@R: 
     person("Matt", "Dray", , "mwdray@gmail.com", role = c("aut", "cre"))
 Description: Use your keyboard to move a player sprite around the map.
