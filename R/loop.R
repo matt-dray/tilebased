@@ -4,7 +4,7 @@
 #' @return Nothing. Draws to screen.
 #' @export
 #' @examples \dontrun{play()}
-play <- function(height = 8L, width = 10L) {
+play <- function(height = 20L, width = 32L) {
 
   room <<- .setup_room(height, width)
 
