@@ -7,9 +7,10 @@
 .setup_room <- function(height, width) {
 
   # set up room tiles
-  room <- matrix(".", height, width)
+  # room <- matrix(".", height, width)
+  room <- r.oguelike::generate_dungeon(n_row = height, n_col = width)
 
-  # mark edges as walls
+  # mark all edges as walls
   edge_n <- seq(1, length(room), height)
   edge_s <- seq(height, length(room), height)
   edge_w <- seq(height)
