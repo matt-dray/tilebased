@@ -21,7 +21,7 @@ player <- system.file(
 
 enemy <- system.file(
   "extdata",
-  "kenney_tiny-dungeon_tile_0123.png",
+  "kenney_tiny-dungeon_tile_0124.png",
   package = "tilebased"
 ) |>
   .tile_to_nr()
