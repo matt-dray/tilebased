@@ -1,3 +1,7 @@
+# tilebased 0.3.0
+
+* Added enemy and pathfinding from {r.oguelike}.
+
 # tilebased 0.2.1
 
 * Added code from {r.oguelike} to procedurally generate the map.

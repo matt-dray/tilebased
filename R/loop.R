@@ -29,9 +29,11 @@ play <- function(height = 20L, width = 32L) {
   .draw_room(room, tiles)
 
   if (!is.null(event)) {
-    if (event$type == 'key_press') {
+    if (event$type == "key_press") {
       kp <- event$str
       room <<- .move_player(room, kp)
+      distance <<- .get_distance_map(room)
+      room <<- .move_enemy(room, distance)
       .draw_room(room, tiles)
     }
   }
