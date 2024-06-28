@@ -11,4 +11,4 @@ Just for fun. Not possible without Mike Cheng's [{nara}](https://coolbutuseless.
 
 Install with `remotes::install_github("matt-dray/tilebased")` and then `tilebased::play()`. Michaelsoft Binbows not supported.
 
-<img src='man/figures/demo.png' width='100%' alt='aria-label="A pixel-sprite human character is placed on some grassy tiles in a clearing of a procedurally generated forest. This is happening in an R Graphics Device."'>
+<img src='man/figures/demo.gif' width='100%' alt='aria-label="A pixel-sprite human character is moving around on some grassy tiles in a clearing of a procedurally generated forest. A rat is chasing him down. This is happening in an R Graphics Device."'>
