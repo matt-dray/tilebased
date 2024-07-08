@@ -3,7 +3,7 @@
 \docType{data}
 \name{tree}
 \alias{tree}
-\title{Tree tile}
+\title{Tree Tile}
 \format{
 nativeRaster.
 }
@@ -14,6 +14,6 @@ nativeRaster.
 tree
 }
 \description{
-Tree tile
+Tree Tile
 }
 \keyword{datasets}

@@ -7,12 +7,12 @@
 play(height = 20L, width = 32L)
 }
 \arguments{
-\item{height}{Integer. Number of tiles high for the map.}
+\item{height}{Integer. Number of tiles high for the board.}
 
-\item{width}{Integer. Number of tiles wide for the map.}
+\item{width}{Integer. Number of tiles wide for the board.}
 }
 \value{
-Nothing. Draws to screen.
+Nothing. Draws to a graphics device.
 }
 \description{
 Begin a Game
