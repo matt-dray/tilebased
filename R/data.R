@@ -1,9 +1,9 @@
-#' Grass tile
+#' Grass Tile
 #' @format nativeRaster.
 #' @source <https://www.kenney.nl/>
 "grass"
 
-#' Tree tile
+#' Tree Tile
 #' @format nativeRaster.
 #' @source <https://www.kenney.nl/>
 "tree"

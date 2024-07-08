@@ -1,41 +1,47 @@
 #' Begin a Game
-#' @param height Integer. Number of tiles high for the map.
-#' @param width Integer. Number of tiles wide for the map.
-#' @return Nothing. Draws to screen.
+#' @param height Integer. Number of tiles high for the board.
+#' @param width Integer. Number of tiles wide for the board.
+#' @return Nothing. Draws to a graphics device.
 #' @export
 #' @examples \dontrun{play()}
 play <- function(height = 20L, width = 32L) {
 
-  room <<- .setup_room(height, width)
+  if (!is.integer(height) || !is.integer(width)) {
+    stop('Arguments height and width must be integers.', call. = FALSE)
+  }
+  
+  boardmesh <<- .setup_boardmesh(height, width)
 
-  tiles <<- list(
-    grass = tilebased::grass,
-    tree = tilebased::tree,
+  tileset <<- list(
+    grass  = tilebased::grass,
+    tree   = tilebased::tree,
     player = tilebased::player,
-    enemy = tilebased::enemy
+    enemy  = tilebased::enemy
   )
 
-  eventloop::run_loop(.explore_room)
+  eventloop::run_loop(.explore_board)
 
 }
 
-#' Accept Input and Update Room
+#' Accept Input, Update and Draw the Board
 #' @param event List.
 #' @param ... Not used. For compatibility.
-#' @return Nothing. Draws to screen.
+#' @return Nothing. Draws to a graphics device.
 #' @noRd
-.explore_room <- function(event, ...) {
+.explore_board <- function(event, ...) {
 
-  .draw_room(room, tiles)
+  .draw_board(boardmesh, tileset)
 
-  if (!is.null(event)) {
-    if (event$type == "key_press") {
-      kp <- event$str
-      room <<- .move_player(room, kp)
-      distance <<- .get_distance_map(room)
-      room <<- .move_enemy(room, distance)
-      .draw_room(room, tiles)
-    }
+  if (!is.null(event) && event$type == "key_press") {
+
+      key_pressed <- event$str
+    
+      boardmesh <<- .move_player(boardmesh, key_pressed)
+      navmesh   <<- .get_navmesh(boardmesh)
+      boardmesh <<- .move_enemy(boardmesh, navmesh)
+    
+      .draw_board(boardmesh, tileset)
+    
   }
 
 }

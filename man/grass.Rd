@@ -3,7 +3,7 @@
 \docType{data}
 \name{grass}
 \alias{grass}
-\title{Grass tile}
+\title{Grass Tile}
 \format{
 nativeRaster.
 }
@@ -14,6 +14,6 @@ nativeRaster.
 grass
 }
 \description{
-Grass tile
+Grass Tile
 }
 \keyword{datasets}
